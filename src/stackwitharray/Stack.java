@@ -1,7 +1,5 @@
 package stackwitharray;
 
-import java.util.Scanner;
-
 public class Stack {
 	
 	public Object[] stackArray;
