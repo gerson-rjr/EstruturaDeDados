@@ -7,8 +7,11 @@ public class ListaDEncadeada {
 	protected long tamanhoLista;
 	protected String retorne;
 	
+	
 	public ListaDEncadeada() {
 		tamanhoLista = 0;
+		primeiro.setAnterior(null);
+		ultimo.setProximo(null);
 	}
 	
 	public void inserirInicio(String elemento) {
