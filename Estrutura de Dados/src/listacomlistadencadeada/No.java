@@ -1,34 +1,39 @@
 package listacomlistadencadeada;
 
-import listaligada.NoLDE;
-
-public class No {
+public class No<T> implements Posicao<Object> {
 	
-	private String elemento;
-	private No proximo;
-	private No anterior;
+	private Object elemento;
+	private No<T> proximo;
+	private No<T> anterior;
 
 	
-	public No(String elemento) {
+	public No(No<T> anterior, No<T> proximo, Object elemento) {
+		this.elemento = elemento;
+		this.proximo = proximo;
+		this.anterior = anterior;
+	}
+	
+	public No(Object elemento) {
 		this.elemento = elemento;
 	}
 
-	public String getElemento() {
-		return elemento;
-	}
-	public void setElemento(String elemento) {
+	public void setElemento(Object elemento) {
 		this.elemento = elemento;
 	}
-	public No getProximo() {
+	public No<T> getProximo() {
 		return proximo;
 	}
-	public void setProximo(No proximo) {
+	public void setProximo(No<T> proximo) {
 		this.proximo = proximo;
 	}
-	public No getAnterior() {
+	public No<T> getAnterior() {
 		return anterior;
 	}
-	public void setAnterior(No anterior) {
+	public void setAnterior(No<T> anterior) {
 		this.anterior = anterior;
+	}
+	@Override
+	public Object element() {
+		return elemento;
 	}
 }
