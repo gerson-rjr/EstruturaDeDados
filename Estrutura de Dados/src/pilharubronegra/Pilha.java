@@ -2,20 +2,16 @@ package pilharubronegra;
 
 import java.util.EmptyStackException;
 
-public class PilhaA<E> implements Stack<E> {
+public class Pilha<E> implements Stack<E> {
 
 	protected int capacidade;
-	public static final int CAPACITY = 1000;
 	protected E S[];
 	protected int top = -1;
 	
-//	public PilhaA() {
-//		this(CAPACITY);
-//	}
 	
-	public PilhaA() {
-		this.capacidade = 10;
-		S = (E[]) new Object[10];
+	public Pilha(int capacidade) {
+		this.capacidade = capacidade;
+		S = (E[]) new Object[capacidade];
 	}
 	
 	@Override
@@ -62,20 +58,17 @@ public class PilhaA<E> implements Stack<E> {
 	
 	public static void main(String[] args) throws FullStackException, EmptyStackException {
 		Object o;
-		PilhaA<Integer> pilha = new PilhaA<Integer>();
+		Pilha<Integer> pilha = new Pilha<Integer>(10);
+		pilha.push(5);
+		pilha.push(4);
+		pilha.push(3);
+		pilha.push(2);
 		pilha.push(5);
 		pilha.push(4);
 		pilha.push(3);
 		pilha.push(2);
 		pilha.status("Pilha1", null);
-		o = pilha.pop();
-		pilha.status("Pilha1", o);
-		o = pilha.pop();
-		pilha.status("Pilha1", o);
-		o = pilha.pop();
-		pilha.status("Pilha1", o);
-		o = pilha.pop();
-		pilha.status("Pilha1", o);
+
 	}
 		
 	
